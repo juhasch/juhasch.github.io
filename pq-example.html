@@ -5,8 +5,8 @@
 <meta charset="utf-8" />
 <title>pq-example</title>
 
-<script src="/static/components/requirejs/require.js"></script>
-<script src="/static/components/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
     /*!
@@ -7550,26 +7550,6 @@ Browsers not listed, including Safari, are supported via the styling under the
   /* Modern browsers */
   justify-content: center;
 }
-.hbox.baseline,
-.vbox.baseline,
-.baseline {
-  /* Old browsers */
-  -webkit-box-pack: baseline;
-  -moz-box-pack: baseline;
-  box-pack: baseline;
-  /* Modern browsers */
-  justify-content: baseline;
-}
-.hbox.stretch,
-.vbox.stretch,
-.stretch {
-  /* Old browsers */
-  -webkit-box-pack: stretch;
-  -moz-box-pack: stretch;
-  box-pack: stretch;
-  /* Modern browsers */
-  justify-content: stretch;
-}
 .hbox.align-start,
 .vbox.align-start,
 .align-start {
@@ -7599,26 +7579,6 @@ Browsers not listed, including Safari, are supported via the styling under the
   box-align: center;
   /* Modern browsers */
   align-items: center;
-}
-.hbox.align-baseline,
-.vbox.align-baseline,
-.align-baseline {
-  /* Old browsers */
-  -webkit-box-align: baseline;
-  -moz-box-align: baseline;
-  box-align: baseline;
-  /* Modern browsers */
-  align-items: baseline;
-}
-.hbox.align-stretch,
-.vbox.align-stretch,
-.align-stretch {
-  /* Old browsers */
-  -webkit-box-align: stretch;
-  -moz-box-align: stretch;
-  box-align: stretch;
-  /* Modern browsers */
-  align-items: stretch;
 }
 div.error {
   margin: 2em;
@@ -8953,12 +8913,6 @@ h6:hover .anchor-link {
 div.cell.text_cell.rendered {
   padding: 0px;
 }
-.text_cell.rendered .input_area {
-  display: none;
-}
-.text_cell.unrendered .text_cell_render {
-  display: none;
-}
 .cm-s-heading-1,
 .cm-s-heading-2,
 .cm-s-heading-3,
@@ -9066,6 +9020,32 @@ div.cell.text_cell.rendered {
 }
 /* THE CLASSES BELOW CAN APPEAR ANYWHERE IN THE DOM (POSSIBLEY OUTSIDE OF
    THE WIDGET AREA). */
+.widget-hlabel {
+  /* Horizontal Label */
+  min-width: 10ex;
+  padding-right: 8px;
+  padding-top: 5px;
+  text-align: right;
+  vertical-align: text-top;
+}
+.widget-vlabel {
+  /* Vertical Label */
+  padding-bottom: 5px;
+  text-align: center;
+  vertical-align: text-bottom;
+}
+.widget-hreadout {
+  padding-left: 8px;
+  padding-top: 5px;
+  text-align: left;
+  vertical-align: text-top;
+}
+.widget-vreadout {
+  /* Vertical Label */
+  padding-top: 5px;
+  text-align: center;
+  vertical-align: text-top;
+}
 .slide-track {
   /* Slider Track */
   border: 1px solid #CCCCCC;
@@ -9285,11 +9265,66 @@ div.cell.text_cell.rendered {
   /* ComboBox Main Button */
   min-width: 125px;
 }
-.widget_item .dropdown-menu li a {
-  color: inherit;
+.widget-box {
+  /* The following section sets the style for the invisible div that
+    hold widgets and their accompanying labels.
+
+    Looks like this:
+    +-----------------------------+
+    | widget-box (or similar)     |
+    |  +-------+---------------+  |
+    |  | Label | Actual Widget |  |
+    |  +-------+---------------+  |
+    +-----------------------------+
+    */
+  margin: 5px;
+  /* Old browsers */
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  /* Modern browsers */
+  justify-content: flex-start;
+  /* Box */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Old browsers */
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  /* Modern browsers */
+  align-items: flex-start;
 }
 .widget-hbox {
   /* Horizontal widgets */
+  /* The following section sets the style for the invisible div that
+    hold widgets and their accompanying labels.
+
+    Looks like this:
+    +-----------------------------+
+    | widget-box (or similar)     |
+    |  +-------+---------------+  |
+    |  | Label | Actual Widget |  |
+    |  +-------+---------------+  |
+    +-----------------------------+
+    */
+  margin: 5px;
+  /* Old browsers */
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  /* Modern browsers */
+  justify-content: flex-start;
+  /* Box */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Old browsers */
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  /* Modern browsers */
+  align-items: flex-start;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: horizontal;
@@ -9310,27 +9345,93 @@ div.cell.text_cell.rendered {
   box-flex: 0;
   /* Modern browsers */
   flex: none;
+}
+.widget-hbox-single {
+  /* Single line horizontal widgets */
+  /* Horizontal widgets */
+  /* The following section sets the style for the invisible div that
+    hold widgets and their accompanying labels.
+
+    Looks like this:
+    +-----------------------------+
+    | widget-box (or similar)     |
+    |  +-------+---------------+  |
+    |  | Label | Actual Widget |  |
+    |  +-------+---------------+  |
+    +-----------------------------+
+    */
   margin: 5px;
+  /* Old browsers */
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  /* Modern browsers */
+  justify-content: flex-start;
+  /* Box */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Old browsers */
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  /* Modern browsers */
+  align-items: flex-start;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  box-flex: 0;
+  /* Modern browsers */
+  flex: none;
+  height: 30px;
 }
-.widget-hbox input[type="checkbox"] {
+.widget-hbox-single input[type="checkbox"] {
   margin-top: 9px;
-}
-.widget-hbox .widget-label {
-  /* Horizontal Label */
-  min-width: 10ex;
-  padding-right: 8px;
-  padding-top: 5px;
-  text-align: right;
-  vertical-align: text-top;
-}
-.widget-hbox .widget-readout {
-  padding-left: 8px;
-  padding-top: 5px;
-  text-align: left;
-  vertical-align: text-top;
 }
 .widget-vbox {
   /* Vertical widgets */
+  /* The following section sets the style for the invisible div that
+    hold widgets and their accompanying labels.
+
+    Looks like this:
+    +-----------------------------+
+    | widget-box (or similar)     |
+    |  +-------+---------------+  |
+    |  | Label | Actual Widget |  |
+    |  +-------+---------------+  |
+    +-----------------------------+
+    */
+  margin: 5px;
+  /* Old browsers */
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  /* Modern browsers */
+  justify-content: flex-start;
+  /* Box */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Old browsers */
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  /* Modern browsers */
+  align-items: flex-start;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9352,17 +9453,58 @@ div.cell.text_cell.rendered {
   /* Modern browsers */
   flex: none;
 }
-.widget-vbox .widget-label {
-  /* Vertical Label */
-  padding-bottom: 5px;
-  text-align: center;
-  vertical-align: text-bottom;
-}
-.widget-vbox .widget-readout {
-  /* Vertical Label */
-  padding-top: 5px;
-  text-align: center;
-  vertical-align: text-top;
+.widget-vbox-single {
+  /* For vertical slides */
+  /* Vertical widgets */
+  /* The following section sets the style for the invisible div that
+    hold widgets and their accompanying labels.
+
+    Looks like this:
+    +-----------------------------+
+    | widget-box (or similar)     |
+    |  +-------+---------------+  |
+    |  | Label | Actual Widget |  |
+    |  +-------+---------------+  |
+    +-----------------------------+
+    */
+  margin: 5px;
+  /* Old browsers */
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  box-pack: start;
+  /* Modern browsers */
+  justify-content: flex-start;
+  /* Box */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* Old browsers */
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  /* Modern browsers */
+  align-items: flex-start;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  box-flex: 0;
+  /* Modern browsers */
+  flex: none;
+  width: 30px;
 }
 .widget-modal {
   /* Box - ModalView */
@@ -9454,10 +9596,6 @@ span#notebook_name {
   padding: 3px;
   border: none;
   font-size: 146.5%;
-  border-radius: 4px;
-}
-span#notebook_name:hover {
-  background-color: #e6e6e6;
 }
 div#notebook_panel {
   margin: 0px 0px 0px 0px;
@@ -9572,64 +9710,8 @@ p {
   padding-top: 3px;
 }
 .celltoolbar select {
-  display: block;
-  width: 100%;
-  height: 32px;
-  padding: 6px 12px;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #555555;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  height: 30px;
-  padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px;
-  width: inherit;
   font-size: 87%;
   height: 22px;
-  display: inline-block;
-}
-.celltoolbar select:focus {
-  border-color: #66afe9;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
-}
-.celltoolbar select::-moz-placeholder {
-  color: #999999;
-  opacity: 1;
-}
-.celltoolbar select:-ms-input-placeholder {
-  color: #999999;
-}
-.celltoolbar select::-webkit-input-placeholder {
-  color: #999999;
-}
-.celltoolbar select[disabled],
-.celltoolbar select[readonly],
-fieldset[disabled] .celltoolbar select {
-  cursor: not-allowed;
-  background-color: #eeeeee;
-  opacity: 1;
-}
-textarea.celltoolbar select {
-  height: auto;
-}
-select.celltoolbar select {
-  height: 30px;
-  line-height: 30px;
-}
-textarea.celltoolbar select,
-select[multiple].celltoolbar select {
-  height: auto;
 }
 .celltoolbar label {
   margin-left: 5px;
@@ -10654,7 +10736,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="/nbextensions/mathjax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
